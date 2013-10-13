@@ -1,0 +1,51 @@
+package com.chida.denominator;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigDecimal;
+
+public class Denominator {
+	
+	String inputString;
+	public Denominator(String inputString) {
+		this.inputString =  inputString;
+	}
+
+	public static void main(String[] args) {
+		getInputCurrencyAmount();
+	}
+
+	private static String getInputCurrencyAmount() {
+		System.out.println("Enter the currency value here- Enter E to exit: ");
+		String inputString = null;
+		try {
+			BufferedReader bufferRead = new BufferedReader(
+					new InputStreamReader(System.in));
+			inputString = bufferRead.readLine();
+
+			System.out.println(inputString);
+			
+			if(inputString.equals("E")) {
+				System.exit(0);
+			}
+			Denominator denominator = new Denominator (inputString);
+			
+			boolean isValid = denominator.validateCurrencyAmount(inputString);
+			if(!isValid) {
+				System.out.println("Please enter a valid Currency amount");
+				getInputCurrencyAmount();
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputString;
+	}
+
+	private  boolean validateCurrencyAmount(String inputString) {
+		BigDecimal value = new BigDecimal(inputString);
+		System.out.println(value);
+		return false;
+	}
+}

@@ -1,0 +1,16 @@
+package com.chida.denominator.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.chida.denominator.Denominator;
+
+public class TestDenominator {
+
+	@Test
+	public void testValidateNUll() {
+		Denominator denominator = new Denominator(null);
+	}
+
+}

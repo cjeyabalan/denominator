@@ -1,0 +1,27 @@
+package com.chida.denominator;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Denominator {
+	public static void main(String[] args) {
+		getInputCurrencyAmount();
+	}
+
+	private static String getInputCurrencyAmount() {
+		System.out.println("Enter something here : ");
+		String inputString = null;
+		try {
+			BufferedReader bufferRead = new BufferedReader(
+					new InputStreamReader(System.in));
+			inputString = bufferRead.readLine();
+
+			System.out.println(inputString);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputString;
+	}
+}
